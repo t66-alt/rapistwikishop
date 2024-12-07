@@ -1,0 +1,198 @@
+/* Basic reset for spacing, and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default link styles (underlines or borders) */
+a {
+    text-decoration: none; /* Removes underline */
+    border: none; /* Removes any border that might be applied */
+}
+
+/* Additional link styling for hover state */
+a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Body styles */
+body {
+    background: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: system-ui, sans-serif;
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+/* Loader animation */
+.loader {
+    height: 4px;
+    width: 130px;
+    --c: no-repeat linear-gradient(#1f1f1f 0 0);
+    background: var(--c), var(--c), #dfdfdf;
+    background-size: 60% 100%;
+    animation: l16 3s infinite;
+}
+
+@keyframes l16 {
+    0% { background-position: -150% 0, -150% 0 }
+    66% { background-position: 250% 0, -150% 0 }
+    100% { background-position: 250% 0, 250% 0 }
+}
+
+/* Container for background effects */
+#container {
+    filter: brightness(0.6);
+    position: fixed;
+    touch-action: none;
+    z-index: 1;
+}
+
+/* Overlay styles */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+#overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#overlay a {
+    font-size: 2em;
+    font-weight: 700;
+    font-family: verdana;
+    color: #ffffff;
+}
+
+/* Header styles */
+.header {
+    z-index: 2;
+    position: absolute;
+    top: 35%;
+    right: 50%;
+    transform: translate(50%, -50%) perspective(200px) rotateX(5deg);
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 7em;
+    font-weight: 700;
+    color: #e2e2e2;
+    text-shadow:
+            1px 1px 1px #ffffff,
+            1px 2px 2px rgba(255, 255, 255, 0.4),
+            1px 3px 3px rgba(255, 255, 255, 0.2),
+            1px 18px 6px rgba(255, 255, 255, 0.6),
+            1px 22px 10px rgba(255, 255, 255, 0.3),
+            1px 25px 35px rgba(255, 255, 255, 0.3),
+            1px 30px 60px rgba(255, 255, 255, 0.6);
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.header:hover {
+    cursor: pointer;
+    color: #ffffff;
+    text-shadow:
+            1px 1px 1px #ffffff,
+            1px 2px 2px rgba(255, 255, 255, 0.6),
+            1px 3px 3px rgba(255, 255, 255, 0.4),
+            1px 18px 6px rgba(255, 255, 255, 0.8),
+            1px 22px 10px rgba(255, 255, 255, 0.5),
+            1px 25px 35px rgba(255, 255, 255, 0.5),
+            1px 30px 60px rgba(255, 255, 255, 0.8);
+}
+
+/* Style the sub-text links */
+.sub-text {
+    font-size: 2em;
+    font-family: verdana;
+    font-weight: 700;
+    color: #5c5c5c;
+    text-shadow:
+            1px 1px 1px #4e4e4e,
+            1px 2px 2px rgba(255, 255, 255, 0.4),
+            1px 3px 3px rgba(255, 255, 255, 0.2),
+            1px 18px 6px rgba(255, 255, 255, 0.6),
+            1px 22px 10px rgba(255, 255, 255, 0.3),
+            1px 25px 35px rgba(255, 255, 255, 0.3),
+            1px 30px 60px rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.87);
+    border-radius: 10px;
+    padding: 2px;
+    position: relative; /* Change to relative positioning */
+    z-index: 2;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+/* Hover effect for the tabs */
+.sub-text:hover {
+    cursor: pointer;
+    color: #b3b3b3;
+    text-shadow:
+            1px 1px 1px #808080,
+            1px 2px 2px rgba(255, 255, 255, 0.6),
+            1px 3px 3px rgba(255, 255, 255, 0.4),
+            1px 18px 6px rgba(255, 255, 255, 0.8),
+            1px 22px 10px rgba(255, 255, 255, 0.5),
+            1px 25px 35px rgba(255, 255, 255, 0.5),
+            1px 30px 60px rgba(255, 255, 255, 0.8);
+}
+
+/* Style for both links */
+.link-item {
+    display: inline-block;
+    margin-right: 30px; /* Space between the links */
+    position: relative; /* Added for positioning context */
+}
+
+/* Second sub-text (Shop link) */
+.sub-text2 {
+    background: rgba(255, 255, 255, 0.87);
+    border-radius: 10px;
+    padding: 2px;
+    z-index: 2;
+    position: relative; /* Changed to relative to avoid overlap */
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 2em;
+    font-weight: 700;
+    color: #a8a8a8;
+    text-shadow:
+            1px 1px 1px #4e4e4e,
+            1px 2px 2px rgba(255, 255, 255, 0.4),
+            1px 3px 3px rgba(255, 255, 255, 0.2),
+            1px 18px 6px rgba(255, 255, 255, 0.6),
+            1px 22px 10px rgba(255, 255, 255, 0.3),
+            1px 25px 35px rgba(255, 255, 255, 0.3),
+            1px 30px 60px rgba(255, 255, 255, 0.6);
+}
+
+.sub-text2:hover {
+    cursor: pointer;
+    color: #747474;
+    text-shadow:
+            1px 1px 1px #ffffff, /* Lighter glow on hover */
+            1px 2px 2px rgba(255, 255, 255, 0.6),
+            1px 3px 3px rgba(255, 255, 255, 0.4),
+            1px 18px 6px rgba(255, 255, 255, 0.8),
+            1px 22px 10px rgba(255, 255, 255, 0.5),
+            1px 25px 35px rgba(255, 255, 255, 0.5),
+            1px 30px 60px rgba(255, 255, 255, 0.8);
+}

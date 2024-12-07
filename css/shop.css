@@ -1,0 +1,98 @@
+/* Basic reset for spacing, and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background-color: #000;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Return Button Styles */
+.return-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid white; /* White border */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
+
+/* Shop Page Styling */
+.shop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Coming Soon Text Styling */
+.coming-soon {
+    font-size: 3em;
+    font-family: Verdana, sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: absolute;
+    animation: bounce 6s infinite linear; /* Bouncing animation with smooth, constant loop */
+}
+
+/* Bouncing Animation Keyframes */
+@keyframes bounce {
+    0% {
+        transform: translateX(0px) translateY(0px); /* Start at center */
+    }
+    10% {
+        transform: translateX(300px) translateY(200px); /* Move to a random position */
+    }
+    20% {
+        transform: translateX(-200px) translateY(100px); /* Move to another random position */
+    }
+    30% {
+        transform: translateX(500px) translateY(-100px); /* Another random position */
+    }
+    40% {
+        transform: translateX(-300px) translateY(-300px); /* Another random position */
+    }
+    50% {
+        transform: translateX(150px) translateY(400px); /* Move to a random position */
+    }
+    60% {
+        transform: translateX(-500px) translateY(200px); /* Another random position */
+    }
+    70% {
+        transform: translateX(100px) translateY(-350px); /* Move to another random position */
+    }
+    80% {
+        transform: translateX(350px) translateY(100px); /* Another random position */
+    }
+    90% {
+        transform: translateX(-400px) translateY(250px); /* Another random position */
+    }
+    100% {
+        transform: translateX(0px) translateY(0px); /* Return to center */
+    }
+}

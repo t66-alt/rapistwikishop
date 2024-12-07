@@ -1,0 +1,228 @@
+/* Body and general layout styles */
+body {
+    user-select: none;
+    margin: 0;
+    padding: 50px;
+    overflow-y: scroll;
+    font-family: 'Minecraftia', sans-serif;
+    perspective: 1500px;
+    background: linear-gradient(rgb(153, 153, 153), #8f8f8f);
+    background-image: url('https://otkritkis.com/wp-content/uploads/2022/07/guydb.gif');
+    background-size: cover; /* Make the background image cover the entire body */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+}
+
+/* Card container with grid layout */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px; /* Space between cards */
+    justify-items: center; /* Center cards horizontally */
+    padding: 20px;
+    margin-top: 20px;
+    /* Centering the grid container itself on the page */
+    display: flex;
+    justify-content: center; /* Horizontally center the grid */
+    align-items: center; /* Vertically center the grid */
+    height: 100%; /* Take full height of the body */
+    flex-wrap: wrap; /* Allow cards to wrap if necessary */
+}
+/* Basic styles for the popup */
+.popup {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Ensure it's above other content */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Global box-sizing for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* General layout for HTML and body */
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center all content */
+}
+
+/* Card styles: make the cards bigger and have some nice effects */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.1);
+    width: 600px; /* Increase width of cards */
+    height: 600px; /* Increase height of cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Normal shadow */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 20px;
+    transition-duration: 400ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+    border: #2F2F2F 1px solid;
+}
+
+/* Hover effect for the cards */
+.card:hover {
+    cursor: crosshair;
+    transform: scale(1.05);
+    /* Glowing effect on hover (changed blue glow) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.8); /* Glowing blue effect */
+}
+
+/* Profile picture styles */
+.pfp {
+    width: 180px; /* Increase size of profile picture */
+    height: 180px;
+    border-radius: 90px; /* Adjust based on new size */
+    border: 2px solid #ffffff;
+    margin-bottom: 10px;
+    position: relative;
+    top: 50px;
+}
+
+/* Name-text styling for Detatched */
+.name-text {
+    color: white;
+    font-size: 2em; /* Increase font size */
+    margin-top: 60px;
+    margin-bottom: 10px;
+    text-align: center; /* Center text horizontally */
+    position: relative;
+}
+
+/* Social icons container */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Increase space between social icons */
+    margin-top: 5px;
+}
+
+/* Social icon hover effects */
+.social-icons .icon img {
+    width: 45px; /* Increase size of social icons */
+    height: 45px;
+    transition: transform 0.3s;
+}
+
+.social-icons .icon:hover img {
+    transform: scale(1.3);
+}
+
+/* Header style */
+.Header {
+    border-radius: 10px;
+    padding: 2px;
+    z-index: 2;
+    position: absolute;
+    top: 3%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-transform: uppercase;
+    font-family: 'Minecraftia', sans-serif;
+    font-size: 2.5em; /* Slightly increase the header font size */
+    font-weight: 700;
+    color: #f3f3f3;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.Header:hover {
+    cursor: pointer;
+    color: #ffffff;
+    text-shadow:
+            1px 1px 1px #ffffff,
+            1px 2px 2px rgba(255, 255, 255, 0.6),
+            1px 3px 3px rgba(255, 255, 255, 0.6),
+            1px 10px 6px rgba(255, 255, 255, 0.8),
+            1px 12px 10px rgba(255, 255, 255, 0.5),
+            1px 15px 35px rgba(255, 255, 255, 0.5),
+            1px 15px 60px rgba(255, 255, 255, 0.8);
+}
+
+
+/* Particle effect styles */
+#particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure particles are above other content */
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8); /* White particles with some transparency */
+    animation: particle-animation 1s forwards;
+}
+
+@keyframes particle-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Style adjustments for .link-item */
+.link-item {
+    display: inline-block;  /* Make links inline and centered */
+    text-align: center;     /* Center text */
+    transform: none;        /* Remove any skew or rotate */
+    font-family: Arial, sans-serif;  /* Optional: Change font */
+    font-size: 1rem;        /* Font size */
+    color: #fff;            /* White text color */
+    text-decoration: none;  /* Remove underline */
+    margin: 10px;           /* Optional: Add space between the links */
+}
+
+.link-item:hover {
+    text-decoration: underline;  /* Underline on hover */
+}

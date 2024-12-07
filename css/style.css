@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&display=swap');
+body{
+    background: #0e0e0e;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.center{
+    text-align: center;
+    align-content: center;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #00000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #212121;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@keyframes bgWaveAnimation {
+    from {background-position: 0 0}
+    to {background-position: 300% 300%}
+}
+
+@keyframes gradientAnimation {
+    0% {transform: rotate(0deg)}
+    100% {transform:  rotate(360deg)}
+}
+
+.gradientBallContainer{
+    animation: gradientAnimation 25s linear infinite;
+    height: fit-content;
+    position: fixed;
+    z-index: -2;
+    margin-top: -12%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gradientBall{
+    background-size: 150% 150%;
+    animation: bgWaveAnimation 5s linear infinite;
+    width: 70vh;
+    height: 70vh;
+    background-image: linear-gradient(90deg, #ff579a, #00ff88);
+    border-radius: 50%;
+    z-index: -2;
+    filter: blur(100px);
+}
+
+
+.gradientBall2{
+    background-size: 150% 150%;
+    animation: bgWaveAnimation 6s linear infinite;
+    width: 80vh;
+    height: 80vh;
+    background-image: linear-gradient(90deg, #ff579a, #00ff88);
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -2;
+}
+
+.backgroundFront{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(10vw);
+    background-color: rgba(0, 0, 0, 0.53);
+}
+
+.button{
+    color: white;
+    text-decoration: none;
+    background: #02020290;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 30px;
+    display: inline-block;
+    width: 230px;
+    transition: 0.5s;
+    box-shadow: 0 0 20px #00000050;
+}
+
+.button:hover{
+    background: -webkit-linear-gradient(0deg, #ff579a, #00ff88);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #5900ff80;
+}
+
+@keyframes cardAnimation {
+    from {transform: rotate(15deg) scale(3); opacity: 0;}
+    to {transform: rotate(0deg) scale(1); opacity: 1;}
+}
+
+@keyframes waveAnimation {
+    from {background-position-x: 0}
+    to {background-position-x: 400%}
+}
+
+@media only screen and (max-width: 730px) {
+    .title{
+        font-size: 18svw !important;
+    }
+
+    .subtitle{
+        font-size: 5svw !important;
+    }
+}
+
+.title{
+    font-size: 130px;
+    font-weight: 600;
+    background: -webkit-linear-gradient(0deg, #ff579a, #00ff88, #ff008c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    animation: waveAnimation 6s linear infinite;
+}
+
+.subtitle{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.card{
+    perspective: 1000px;
+    animation: cardAnimation .7s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 30px;
+    margin-top: calc(50vh - 180px);
+}
